@@ -1,0 +1,2224 @@
+/*!
+Theme Name: Learning Accessibility
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: learning-accessibility
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Learning Accessibility is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+    - Normalize
+    - Box sizing
+# Base
+    - Typography
+    - Elements
+    - Links
+    - Forms
+## Layouts
+# Components
+    - Navigation
+    - Posts and pages
+    - Comments
+    - Widgets
+    - Media
+    - Captions
+    - Galleries
+# plugins
+    - Jetpack infinite scroll
+# Utilities
+    - Accessibility
+    - Alignments
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+     ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+/* Sections
+     ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+html body {
+    margin: 0;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden;
+    margin-bottom: 0 !important;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+    display: block;
+}
+
+.jaspreet{
+  padding: 0 !important;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/* Grouping content
+     ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+/* Text-level semantics
+     ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+    font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* Embedded content
+     ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+    border-style: none;
+}
+
+/* Forms
+     ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+    overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *        `fieldset` elements in all browsers.
+ */
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+    vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+    overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+/* Interactive
+     ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+    display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+    display: list-item;
+}
+
+/* Misc
+     ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+    display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+    display: none;
+}
+
+/* Box sizing
+--------------------------------------------- */
+
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+    color: #404040;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    margin: 0 1.5em;
+}
+
+address {
+    margin: 0 0 1.5em;
+}
+
+pre {
+    background: #eee;
+    font-family: "Courier 10 Pitch", courier, monospace;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+    font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+mark,
+ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+
+big {
+    font-size: 125%;
+}
+
+/* Elements
+--------------------------------------------- */
+body {
+    background: #fff;
+}
+
+hr {
+    background-color: #ccc;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+
+
+
+ul,
+ol {
+    margin: 0 0 1.5em 3em;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+li > ul,
+li > ol {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin: 0 1.5em 1.5em;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+figure {
+    margin: 1em 0;
+}
+
+table {
+    margin: 0 0 1.5em;
+    width: 100%;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+    color: #4169e1;
+}
+
+a:visited {
+    color: #800080;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #191970;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+/* Forms
+--------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    border: 1px solid;
+    border-color: #ccc #ccc #bbb;
+    border-radius: 3px;
+    background: #e6e6e6;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1;
+    padding: 0.6em 1em 0.4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+    border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+    color: #111;
+}
+
+select {
+    border: 1px solid #ccc;
+}
+
+textarea {
+    width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Navigation
+--------------------------------------------- */
+.main-navigation {
+    display: block;
+    /* width: 100%; */
+}
+
+.main-navigation ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    gap: 40px;
+}
+
+.main-navigation ul ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    float: left;
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+    left: -999em;
+    top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+    display: block;
+    left: auto;
+}
+
+.main-navigation ul ul a {
+    width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+    left: auto;
+}
+
+.main-navigation li {
+    position: relative;
+}
+
+.main-navigation a {
+    display: block;
+    text-decoration: none;
+    color:  #003B49;
+    font-size: 22px;
+
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+    display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .main-navigation ul {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.site-main .comment-navigation,
+.site-main
+.posts-navigation,
+.site-main
+.post-navigation {
+    margin: 0 0 1.5em;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+    display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+    flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+    text-align: end;
+    flex: 1 0 50%;
+}
+
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+    display: block;
+}
+
+.post,
+.page {
+    margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 1.5em 0 0;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+/* Comments
+--------------------------------------------- */
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+/* Widgets
+--------------------------------------------- */
+.widget {
+    margin: 0 0 1.5em;
+}
+
+.widget select {
+    max-width: 100%;
+}
+
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+    display: inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+    text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+    margin-bottom: 1.5em;
+    display: grid;
+    grid-gap: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.gallery-columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.gallery-caption {
+    display: block;
+}
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+
+/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+    display: none;
+}
+
+/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
+.infinity-end.neverending .site-footer {
+    display: block;
+}
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+    outline: 0;
+}
+
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+
+    /*rtl:ignore*/
+    float: left;
+
+    /*rtl:ignore*/
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.alignright {
+
+    /*rtl:ignore*/
+    float: right;
+
+    /*rtl:ignore*/
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+}
+
+
+.site-header {
+  max-width: 1400px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.main-navigation ul li:last-child a {
+  padding: 10px 15px;
+  background: #FFC845;
+  border-radius: 8px;
+}
+
+.site-main.page-template{
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 15px 45px;
+}
+
+.page-template .pmpro_section{padding: 8% 25% 0px 25%;}
+
+.main-navigation ul li:nth-last-child(2) a {
+ border: 2px solid #003B49;
+ padding: 10px 15px;
+ border-radius: 8px;
+ height: 53px;
+ width: 150px;
+  text-align: center;
+  line-height: 28px;
+}
+
+.explore-img-container figure, .courses-list > .row figure {
+  max-height: 280px;
+  overflow: hidden;
+}
+
+.explore-img-container .wp-block-heading {
+  font-size: 22px;
+}
+
+.explore-img-container > div figure, .courses-list > .row > div figure {
+  margin: 0;
+}
+
+.explore-img-container > div, .courses-list > .row > div {
+  width: 33.33%;
+  border: 2px solid #D5D7D4;
+  text-align: center;
+}
+
+.explore-img-container, .courses-list > .row {
+    gap: 1.5rem;
+}
+.courses-list > .row {
+    margin-bottom: 1.5rem !important;
+}
+
+.wp-block-group.explore-online h2, .wp-block-group.explore-online h5 {
+  margin: 0 !important;
+}
+
+body .is-layout-flex {
+  display: flex;
+  max-width: 1400px;
+  margin: 10px auto;
+  padding: 0 15px;
+  flex-wrap: nowrap !important;
+}
+
+.explore-online p {
+  font-size: 22px;
+  color: #495471;
+  max-width: 1000px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+
+
+.wp-block-group.explore-online h2 {
+    color:  #003B49;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.wp-block-group.explore-online h5 {
+    font-size: 22px;
+    font-weight: normal;
+    color: #495471;
+    margin-top: 50px !important;
+    margin-bottom: 5px !important;
+}
+
+.wp-block-group.explore-online h5 {
+    font-size: 22px;
+    font-weight: normal;
+    color: #495471;
+}
+
+.button-box .wp-block-button__link.has-black-color.has-white-background-color.has-text-color.has-background.has-link-color.wp-element-button {
+  padding: 0;
+  border-radius: 0;
+  color: #003B49 !important;
+  text-decoration: underline;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.media-text-p {
+  font-size: 22px !important;
+  color: #495471 !important;
+}
+
+.wp-block-heading.media-text-h2.has-text-color {
+  font-size: 30px !important;
+  line-height: 40px;
+  color: #003b49 !important;
+}
+
+.media-box .wp-block-media-text.alignwide.is-stacked-on-mobile .wp-block-media-text__media {
+  max-width: 680px;
+}
+
+.media-box {
+margin: 80px auto;
+  max-width: 1400px;
+  min-height: auto !important;
+  padding: 0 15px;
+}
+
+.wp-block-group.aboutus p {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: 18px;
+  color: #495471;
+  line-height: 28px;
+  text-align: center;
+}
+
+.wp-block-group.aboutus h2 {
+  margin-bottom: 10px;
+}
+
+.wp-block-group.aboutus {
+  max-width: 1400px;
+  margin: 80px auto 0;
+  text-align: center;
+} 
+
+
+h2{
+   color: #003B49;
+   font-size: 30px;
+   font-weight: 700;
+}
+
+.wp-block-code.banner-button a {
+  
+  background: #FFC845;
+  color: #003B49;
+  height: 65px;
+  width: 189px;
+  display: inline-block;
+  font-size: 22px;
+  text-align: center;
+  line-height: 65px;
+  border-radius: 8px;
+}
+
+.wp-block-group.banner-right-section p, .banner-right-content p {
+  font-size: 20px;
+  color: #fff;
+  font-weight: normal;
+  max-width: 600px;
+}
+
+#pmpro_login {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.banner-right-section h2, .banner-right-content h2 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  max-width: 655px;
+}
+
+.wp-block-code.banner-button {
+  background: none;
+  width: auto;
+  padding: 0;
+  display: inline-block;
+  margin: 0;
+}
+
+.wp-block-group.banner-right-section, .banner-right-content {
+  padding-left: 200px;
+}
+
+.banner-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.banner-section:before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #003b49;
+  position: absolute;
+  left: -100%;
+}
+.banner-section:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #003b49;
+  right: -100%;
+}
+
+.Explore-shortcode .row.pmpro-course-list.explore-img-container, .courses-list > .row {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+}
+
+.Explore-shortcode .row.pmpro-course-list.explore-img-container .course-image img, .courses-list > .row .featured-img img{
+   max-width: none;
+   width: 100%;
+}
+
+.Explore-shortcode .row.pmpro-course-list.explore-img-container .course-image, .courses-list > .row .featured-img{
+    max-height: 280px;
+  overflow: hidden
+}
+
+.Explore-shortcode .row.pmpro-course-list.explore-img-container .course-title h3 {
+    margin: 20px 0;
+    font-size: 22px;
+    color: #003B49;
+}
+.extra-meta .meta-row.top .title{
+    font-size: 22px;
+    color: #003B49;
+    text-align: left;
+    font-weight: bold;
+}
+.footer-row p {
+  margin: 0;
+}
+
+.wp-block-group.explore-online {
+  margin-top:65px;
+}
+
+.main-navigation li.current_page_item a{
+  color: #FFC845;
+}
+
+.wp-block-group.banner-inner > div {
+  display: flex;
+  align-items: center;
+}
+
+.extra-meta .meta-row.bottom div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 400;
+}
+
+.extra-meta {
+  padding: 10px 20px;
+}
+
+.mc4wp-form-fields {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.footer-row p  label input{
+    border: 1px solid #003B49;
+  background: none;
+  width: 400px;
+  height: 53px;
+  border-radius: 8px;
+  margin-right: 13px;
+  padding: 0 20px;
+ 
+}
+
+.footer-row p input[type="submit"] {
+  color: #fff;
+  border-radius: 8px;
+  height: 53px;
+  line-height: 48px;
+  width: 159px;
+  padding: 0;
+  background: #003B49;
+  border: none;
+}
+
+.footer-row + .footer-row .row-content .section ul li.wp-social-link a {
+  font-size: 18px;
+  text-decoration: navajowhite;
+  color: #003B49;
+  font-weight: normal;
+  text-align: center;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-row + .footer-row .row-content .section ul li.wp-social-link {
+  padding: 0;
+  background: none;
+  border: 2px solid #B1B3B1 !important; 
+  width: 42px;
+  height: 42px;
+}
+
+.footer-row p  label input::placeholder {
+    color: #003B49;
+    font-size: 18px;
+    opacity: 1;
+
+}
+
+.wp-block-columns.explore-img-container.is-layout-flex.wp-container-core-columns-is-layout-2.wp-block-columns-is-layout-flex {
+    display: none !important;
+}
+
+.section-in {
+  font-size: 18px;
+  color: #003B49;
+  letter-spacing: 1px;
+}
+
+.footer-row + .footer-row .row-content .section ul li {
+  padding: 0 25px;
+  border-right: 1px solid #B1B3B1;
+  line-height: 15px;
+
+}
+
+.footer-row + .footer-row .row-content .section ul li:last-child  {
+    border-right: none;
+}
+
+.footer-row + .footer-row .row-content .section:first-child img {
+  max-width: 200px;
+}
+
+.footer-row + .footer-row .row-content .section ul li a {
+  font-size: 18px;
+  text-decoration: navajowhite;
+  color: #003B49;
+  font-weight: normal;
+}
+
+.footer-row + .footer-row .row-content .section:first-child .widget_media_image {
+    margin-bottom: 0;
+}
+
+.footer-row + .footer-row .row-content .section:first-child .widget_media_image figure {
+    margin: 0;
+}
+
+.footer-row + .footer-row .row-content .section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+footer {
+  background: #FFC845;
+  border-top: 1px solid #CCAC47;
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.footer-row {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer-row + .footer-row .row-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 75px;
+}
+/* Courses page css start 25-10-24 */
+/* .upper-content {
+    background: #003b49;
+} */
+
+body .is-layout-flex.banner-bg {
+  max-width: 100%;
+}
+body .is-layout-flex.banner-bg > div {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.title-h5 {
+margin-top: 55px;
+  margin-bottom: 5px;
+   color: #495471;
+  font-size: 19px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.title-h2 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.pag-ti {
+  margin-top: 0;
+  max-width: 785px;
+  width: 100%;
+  margin: 0 auto;
+  line-height: 34px;
+  color: #495471;
+  font-size: 19px;
+}
+.extra-meta{
+    padding: 20px;
+}
+.extra-meta .meta-row.bottom {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.extra-meta .meta-row.bottom img{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.extra-meta .meta-row .left.class-lesson, .extra-meta .meta-row .right .course-hours {
+    color: #495471;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 28px;
+}
+form.embeddable-buttondown-form input[type="submit"] {
+    border-color: #003B49;
+    border-radius: 8px;
+    background: #003B49;
+    color: #ffffff;
+    padding: 10px;
+    line-height: 1.5;
+    width: 153px;
+  height: 52px;
+  font-size: 14px;
+}
+form.embeddable-buttondown-form input[type="email"]{
+    border: 1px solid #003B49;
+    border-radius: 8px;
+    padding: 14px 25px;
+    margin-right:17px;
+    background-color: transparent;
+    width: 100%;
+    max-width: 400px;
+}
+form.embeddable-buttondown-form input[type="email"]::placeholder{
+    font-size: 18px !important;
+    color: #003B49 !important;
+    opacity: 1;
+}
+/* Courses page css end 25-10-24 */
+
+/* Geatil Page */
+
+.site-breadcrumb {
+  background: #003B49;
+}
+
+.breadcrumb-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 15px 45px;
+}
+
+.course-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pmpro_courses ol.pmpro_courses-list {
+  list-style-type: decimal;
+  list-style-position: inside;
+  margin:25px !important;
+  padding: 0;
+}
+
+
+.courses-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+
+.courses-list .row.explore-img-container {
+  width: 100%;
+  max-width: 1400px;
+  flex: 0 0 100%;
+  border: none aliceblue;
+}
+
+.featured-img {
+  height: 230px;
+  width: 100%;
+  overflow: hidden;
+}
+.featured-img img {
+  width: 100%;
+  height: auto;
+}
+
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:first-child p {
+  font-size: 20px;
+}
+
+.course-container .main-content .wp-block-columns.alignwide {
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+    padding: 15px;
+}
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:first-child {
+  width: 50%;
+  flex: 0 0 50%;
+  max-width: 60%;
+}
+
+.courses-list > div {
+  
+  flex: 0 0 32%;
+  width:32%;
+ 
+  border: 1px solid #ccc;
+  height: 100%;
+}
+
+.pmpro_courses ol.pmpro_courses-list li {
+    padding: 0px;
+}
+
+.pmpro_courses ol.pmpro_courses-list li a div {
+  font-size: 16px;
+  font-weight: 400;
+  color:#495471;
+
+}
+
+body.single-pmpro_lesson ul {
+    margin: 0px;
+    padding: 0 16px;
+}
+
+body.single-pmpro_lesson ol {
+  margin: 0px;
+  padding: 0 16px;
+}
+
+.related-courses {
+  padding: 15px;
+}
+.related-courses h3, .course-container .main-content .wp-block-columns.alignwide .wp-block-column:first-child h3, 
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:last-child   .wp-block-group:last-child h3 {
+  color: #003B49;
+  font-size: 30px;
+
+}
+
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:last-child .wp-block-group:first-child .all-details .detail-img .wp-block-media-text__media {
+  margin: 0;
+}
+
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:last-child .wp-block-group:first-child .wp-block-buttons {
+  padding: 0 15px;
+}
+
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:last-child .wp-block-group:first-child .wp-block-buttons a {
+    border-radius: 0;
+    background: #FFC845;
+    color: #003B49;
+
+
+}
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:last-child .wp-block-group:first-child {
+  border: 2px solid #D5D7D4;
+  margin-bottom: 35px;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:last-child .wp-block-group {
+    border: 2px solid #D5D7D4
+}
+
+
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:last-child   .wp-block-group:last-child {
+    border: none !important;
+}
+
+
+
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:last-child   .wp-block-group:last-child  ul {
+    margin: 0px 0 0 15px;
+    padding: 0;
+}
+
+.course-container .main-content .wp-block-columns.alignwide .wp-block-column:last-child   .wp-block-group:last-child  ul li {
+    font-size: 20px;
+}
+
+.pmpro_courses ol.pmpro_courses-list li a:hover div  {
+   text-decoration: none;
+}
+
+.pmpro_courses ol.pmpro_courses-list li.pmpro_courses-list-item, .pmpro_courses ul.pmpro_courses-list li.pmpro_courses-list-item {
+  border-bottom: 1px solid #CCC;
+  list-style: none;
+  margin: 0;
+  padding: 0 0px;
+  border-top: none !important;
+}
+
+body .pmpro_courses {
+  border-bottom:none;
+  border-top: none;
+  margin: 30px 0;
+ padding: 0;
+ border: 1px solid #D5D7D4;
+}
+
+.pmpro_courses ol.pmpro_courses-list {
+    margin: 0;
+}
+
+body .pmpro_courses .pmpro_courses-title {
+    border-bottom: 2px solid #D5D7D4;
+    background: #D5D7D44D;
+    padding: 10px;
+    color:  #003B49;
+    font-size: 25px;
+    font-weight: 700;
+
+}
+
+.lesson-lists {
+     padding: 0px;
+}
+
+.breadcrumb-container .breadcrumbs{
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.breadcrumb-container  .title {
+    margin-top: 30px;
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.breadcrumb-container a {
+    font-weight: 400;
+    color: #fff !important;
+}
+
+
+/* membership */
+
+.membership-banner.wp-block-group.has-background.is-nowrap.is-layout-flex.wp-container-core-group-is-layout-1.wp-block-group-is-layout-flex {
+  max-width: 100%;
+}
+
+#pmpro_levels {
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pmpro_level-price {
+  font-size: 20px;
+  margin-bottom: 25px !important;
+  display: inline-block;
+}
+
+.pmpro_level-current .pmpro_card {
+    border-color: #FFC845 !important;
+}
+
+.pmpro_level-select a {
+  background: #FFC845 !important;
+  border: none !important;
+  color: #003b49 !important;
+  border-radius: 10px !important;
+  font-size: 20px !important;
+  box-shadow: none !important;
+}
+
+.pmpro_level-price strong {
+  font-size: 30px;
+  font-weight: 600;
+  color: #003B49;
+  line-height: 31px;
+  margin-bottom: 35px;
+  display: inline-block;
+}
+
+#pmpro_levels > div {
+  flex: 0 0 23%;
+  max-width: 23%;
+}
+
+.pmpro_card h2 {
+  color: #003B49;
+  font-size: 20px !important;
+  padding: 30px 0 12px !important;
+}
+
+.pmpro_card {
+  box-shadow: none !important;
+  border: 2px solid #D5D7D4 !important;
+  background: #d9d9d9 !important;
+  background: #D9D9D94D !important;
+}
+
+.membership-banner.wp-block-group.has-background.is-nowrap.is-layout-flex.wp-container-core-group-is-layout-1.wp-block-group-is-layout-flex > div {
+  width: 100%;
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: center;
+  gap: 80px;
+}
+
+.membership-banner.wp-block-group.has-background.is-nowrap.is-layout-flex.wp-container-core-group-is-layout-1.wp-block-group-is-layout-flex > div p {
+    font-size: 20px;
+}
+
+.pmpro_lesson-template-default #primary .section.left {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 15px;
+}
+
+.pmpro_lesson-template-default #primary .section.left p {
+  /*font-size: 20px;*/
+}
+
+.pmpro_lesson-template-default #primary .section.right {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+#pmpro_account-profile {
+  padding: 0;
+}
+
+a, body a:visited {
+  color: #003B49 ;
+}
+
+.page-template .pmpro_section {
+  padding: 0;
+}
+
+.site-info .footer-row:first-child .row-content > div {
+  display: none;
+}
+.site-info .footer-row:first-child .row-content > div:first-child {
+  display: block;
+}
+
+a {
+  text-decoration: underline;
+}
+
+.course-container ul, .course-container ol {
+  margin: 0;
+  padding: 0 16px;
+}
+
+.pmpro_level-select a {
+  text-transform: uppercase !important;
+}
+
+@media screen and (min-width:769px) and (max-width:1199px) {
+    .Explore-shortcode .row.pmpro-course-list.explore-img-container .course-title h3, .extra-meta .meta-row.top .title  {
+        font-size: 18px;
+    }
+    .wp-block-group.banner-right-section, .banner-right-content {
+        padding-left: 50px;
+    }
+
+  #pmpro_levels > div {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.site-branding {
+  width: 200px;
+}
+
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+  color: #003B49;
+  font-size: 18px;
+}
+
+.main-navigation ul li:nth-last-child(2) a {
+  border: 2px solid #003B49;
+  padding: 10px 15px;
+  border-radius: 8px;
+  height: 50px;
+  width:auto;
+  text-align: center;
+  line-height: 28px;
+}
+
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  gap: 25px;
+}
+}
+
+@media(min-width:744px) and (max-width:800px) {
+.pmpro_card {
+    margin-bottom: 25px !important;
+    padding: 15px;
+    margin-top: 15px;
+}
+.media-box .wp-block-media-text.alignwide.is-stacked-on-mobile .wp-block-media-text__media {
+  max-width: 340px;
+  width: 100%;
+}
+}
+@media(max-width:768px) {
+  body.mob-menu-overlay, body.mob-menu-slideout, body.mob-menu-slideout-over, body.mob-menu-slideout-top {
+    padding-top: 0 !important;
+  }
+
+   .banner-section .wp-block-image.size-full.is-resized{
+     margin: 25px auto;
+   }
+
+  body.nav, body .main-navigation, body .genesis-nav-menu, body #main-header, body #et-top-navigation, body .site-header, body .site-branding, body .ast-mobile-menu-buttons, body .storefront-handheld-footer-bar{
+    display: none !important;
+  }
+
+ 
+
+  
+
+  body .is-layout-flex {
+    display: flex;
+    max-width: 1400px;
+    margin: 10px auto;
+    padding: 0 15px 35px;
+    flex-wrap: wrap !important;
+ }
+
+ .wp-block-group.banner-right-section p, .banner-right-content p {
+  font-size: 18px;
+  color: #fff;
+  font-weight: normal;
+  max-width: 600px;
+}
+
+.wp-block-group.aboutus {
+  max-width: 1400px;
+  margin: 30px auto 0;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.wp-block-group.explore-online h2 {
+  color: #003B49;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.wp-block-group.explore-online + .wp-block-columns.is-layout-flex.wp-container-core-columns-is-layout-1.wp-block-columns-is-layout-flex {
+  display: none;
+}
+
+.wp-block-group.explore-online h5 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #495471;
+  margin-top: 0 !important;
+}
+
+.media-box {
+  margin: 30px auto;
+  max-width: 1400px;
+  min-height: auto !important;
+  padding: 0 15px;
+}
+
+.mc4wp-form-fields {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.wp-block-group.banner-right-section, .banner-right-content {
+  padding-left: 15px;
+  padding-bottom: 40px;
+  padding-right: 15px;
+}
+
+.pmpro_lesson-template-default #primary .section.left .wp-block-list {
+  margin: 0 0 0px;
+  padding: 12px;
+  font-size: 20px;
+}
+
+.pmpro_lesson-template-default #primary .section.left p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.pmpro_card {
+   margin-bottom: 0 !important;
+}
+
+.pmpro_level-current .pmpro_card {
+   margin-bottom: 0;
+}
+
+#pmpro_levels > div {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+#pmpro_levels {
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.pmpro_courses ol.pmpro_courses-list {
+  margin: 25px 15px !important;
+  padding: 0;
+}
+
+.membership-banner.wp-block-group.has-background.is-nowrap.is-layout-flex.wp-container-core-group-is-layout-1.wp-block-group-is-layout-flex > div {
+  width: 100%;
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: center;
+  gap: 0px;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+
+.pmpro_courses ol.pmpro_courses-list li a div {
+  font-size: 20px;
+  font-weight: normal;
+  color: #495471;
+}
+
+.breadcrumb-container .title {
+  margin-top: 30px;
+  line-height: 42px;
+}
+
+body .pmpro_courses {
+  
+  margin: 0;
+ 
+}
+
+.pmpro_lesson-template-default #primary .section.left .wp-block-list li {
+  margin-bottom: 20px;
+}
+
+.courses-list > div {
+  flex: 0 0 100%;
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 100%;
+  margin-bottom: 25px;
+}
+
+body .is-layout-flex.banner-bg > div {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.footer-row + .footer-row .row-content .section div.widget.widget_block.widget_text {
+   margin: 0px;
+}
+
+.footer-row + .footer-row .row-content .section ul li a {
+  font-size: 15px;
+  text-decoration: navajowhite;
+  color: #003B49;
+  font-weight: normal;
+}
+
+.footer-row + .footer-row .row-content .section {
+  margin-bottom: 23px;
+}
+
+.footer-row + .footer-row .row-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
+  flex-wrap: wrap;
+}
+
+.footer-row p label input {
+  border: 1px solid #003B49;
+  background: none;
+  width: 100%;
+  height: 53px;
+  border-radius: 8px;
+  margin-right: 13px;
+  padding: 0 20px;
+  margin: 15px 0;
+}
+
+.explore-online p {
+  font-size: 18px;
+  color: #495471;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+.footer-row {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+footer {
+  background: #FFC845;
+  border-top: 1px solid #CCAC47;
+  padding: 20px 15px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.Explore-shortcode .row.pmpro-course-list.explore-img-container, .courses-list > .row {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.explore-img-container > div, .courses-list > .row > div {
+  width: 100%;
+  border: 2px solid #D5D7D4;
+  text-align: center;
+}
+
+.wp-block-group.explore-online {
+  padding: 15px;
+}
+
+body .is-layout-flex {
+ 
+  padding: 0 0px 0px;
+
+}
+
+.media-text-p {
+  font-size: 18px !important;
+  color: #495471 !important;
+  line-height: 27px;
+}
+
+.wp-block-heading.media-text-h2.has-text-color {
+font-size: 24px !important;
+    line-height: 29px;
+    color: #003b49 !important;
+    font-weight: 500;
+}
+
+form.embeddable-buttondown-form input[type="submit"] {
+
+  width: 100%;
+  height: 52px;
+  margin-top: 0;
+
+}
+
+.button-box .wp-block-button__link.has-black-color.has-white-background-color.has-text-color.has-background.has-link-color.wp-element-button {
+  font-size: 20px;
+
+}
+
+.wp-block-media-text > .wp-block-media-text__content {
+  padding: 0 0%;
+  word-break: break-word;
+}
+
+.wp-block-code.banner-button a {
+  background: #FFC845;
+  color: #003B49;
+  height: 58px;
+  width: 180px;
+  display: inline-block;
+  font-size: 22px;
+  text-align: center;
+  line-height: 58px;
+  border-radius: 8px;
+}
+
+ .banner-right-section h2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  max-width: 655px;
+  line-height: 35px;
+}
+.custom-logo-link {
+   display: none;
+}
+
+#wprmenu_bar .bar_logo {
+  border: none;
+  margin: 0;
+  padding: 0px 8px 0px 0px;
+  width: 250px;
+  height: auto;
+}
+
+form.embeddable-buttondown-form input[type="email"] {
+  margin-bottom: 20px;
+}
+
+.wp-responsive-menu-demo1 #mg-wprm-wrap li.current-menu-item > a, .wp-responsive-menu-demo1 #mg-wprm-wrap ul#wprmenu_menu_ul li.menu-item a:hover {
+  background: #FFC845;
+  color: #000 !important;
+}
+
+.wp-responsive-menu-demo1 #mg-wprm-wrap {
+  background-color: #1c1c1c;
+}
+
+ html body div#wprmenu_bar {
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+  #wprmenu_bar .menu_title {
+   top: 0;
+}
+
+.admin-bar #wprmenu_menu_ul {
+  padding: 80px 0;
+}
+
+.wp-responsive-menu-demo1 #wprmenu_bar .menu_title {
+  display: block;
+}
+
+.wp-responsive-menu-demo1 #wprmenu_bar {
+  background-color: #fff;
+  max-width: 100%;
+}
+
+#explore-img {
+  width: 100%;
+  text-align: center;
+  padding: 25px;
+}
+
+.course-container {
+  padding: 0 15px;
+}
+
+.breadcrumb-container .breadcrumbs {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 25px;
+  margin-bottom: -20px;
+}
+
+.lesson-lists {
+  padding: 0;
+}
+
+.course-container ul,
+.course-container ol {
+  margin: 0;
+  padding: 0 15px;
+}
+}
